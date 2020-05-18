@@ -1,7 +1,7 @@
-FROM alpine:3.6
+FROM alpine:latest
 
 RUN apk update \
- && apk add --no-cache ssmtp shadow
+ && apk add --no-cache ssmtp shadow && apk add --no-cache mailutils --repository=http://dl-cdn.alpinelinux.org/alpine/edge/testing/
 
 COPY mailer.sh /
 
